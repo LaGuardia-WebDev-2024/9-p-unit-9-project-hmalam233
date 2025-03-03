@@ -3,13 +3,14 @@ setup = function() {
 };
 
 //Background Images
-var caveSceneImage = loadImage("https://www.shutterstock.com/image-vector/vector-illustration-background-forest-scenery-600nw-1807427365.jpg");
+var dubaiSceneImage = loadImage("https://lp-cms-production.imgix.net/features/2017/09/dubai-marina-skyline-2c8f1708f2a1.jpg?auto=compress&format=auto&fit=crop&q=50&w=1200&h=800");
 
-var forestImage = loadImage("https://t3.ftcdn.net/jpg/02/50/39/72/360_F_250397206_HuBj2V5oEytcqonzpzum4IjEjtAsZq3g.jpg");
+var singaporeImage = loadImage("https://i.natgeofe.com/k/95d61645-a0c7-470f-b198-74a399dd5dfb/singapore-city_2x1.jpg​s");
 
 //Variable Declarations
-var sceneImage = caveSceneImage;
-var sceneText = "Where do you want to go?  [Press f for forest and c for cave]";
+var sceneImage = dubaiSceneImage;
+var placeImage = singaporeImage
+var sceneText = "Where do you want to go? [Press w for forest and s for singapore]";
 
 draw = function(){
     
@@ -17,12 +18,12 @@ draw = function(){
 
 
    if(keyPressed){
-     if(key == 'f'){
-       sceneImage = forestImage;   
-       sceneText = "No fox here.  [Press s to restart]";
+     if(key == 'w'){
+      placeImage = singaporeImage;   
+       sceneText = "No foxs here.  [Press s to restart]";
      } 
      if(key == 's'){
-      sceneImage = caveSceneImage;
+      sceneImage = singaporeImage;
       sceneText = "Where do you want to go?  [Press f for forest and c for cave]";
     } 
    }
