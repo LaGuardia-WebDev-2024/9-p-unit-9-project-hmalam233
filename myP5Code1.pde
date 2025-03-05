@@ -10,42 +10,59 @@ var singaporeImage = loadImage("https://images.goway.com/production/styles/wide/
 var ghanaImage = 
 loadImage("https://abudhabi.mfa.gov.gh/uploads/SectionImages/9543_glance1.jpg");
 
+var argentinaImage =
+loadImage("https://lp-cms-production.imgix.net/2024-08/shutterstock1338447983.jpg?auto=format&q=72&w=1440&h=810&fit=crop");
+
+var chipotleImage =
+loadImage("https://mma.prnewswire.com/media/1947967/500th_Chipotlane_exterior_credit_Tim_Furlong_Jr.jpg?w=2700");
+
 
 
 //Variable Declarations
 var placeImage = dubaiSceneImage;
 var sceneImage = singaporeImage;
-var sceneText = "Where do you want to go? [Press s for first destination]";
+var sceneText = "Where do you want to go? [Press S for first destination]";
 
 draw = function(){
     
    drawScene();
 
-}
+
    if(keyPressed){
     if(key == 'd'){
       placeImage = dubaiSceneImage;
-      sceneText = "Where do you want to go?  [Press s for first location]";
-  
+      sceneText = "Where do you want to go?  [Press S for first location]";
+     }
   
      if(key == 's'){
       placeImage = singaporeImage;   
-       sceneText = "would you like to visit here? press G for next location [Press w to restart]";
+      sceneText = "Singapore! would you like to visit here? press G for next location";
      } 
     
       
      if(key == 'g'){
      placeImage = ghanaImage;
-     sceneText = "would you like to visit here? press a for next location"
-     
+     sceneText = "Ghana! would you like to visit here? press A for next location"
      }
+     
+     if(key == 'a'){
+     placeImage = argentinaImage;
+     sceneText = "Argentina!, would you like to visit here? Press c for next location"
+     }
+     
+     if(key == 'c'){
+     placeImage = chipotleImage;
+     sceneText = "your home sweet home!! press d to restart!"
+    
+     }
+     
+    }
       
       
       
-    } 
+     
    }
   
-};
 
 var drawScene = function(){
     image(placeImage, 0, 0);
