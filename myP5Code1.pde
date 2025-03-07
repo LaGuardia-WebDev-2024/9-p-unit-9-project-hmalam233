@@ -3,13 +3,25 @@ setup = function() {
 };
 
 //Background Images
-var caveSceneImage = loadImage("https://www.shutterstock.com/image-vector/vector-illustration-background-forest-scenery-600nw-1807427365.jpg");
+var dubaiSceneImage = loadImage("https://lp-cms-production.imgix.net/features/2017/09/dubai-marina-skyline-2c8f1708f2a1.jpg?auto=compress&format=auto&fit=crop&q=50&w=1200&h=800");
 
-var forestImage = loadImage("https://t3.ftcdn.net/jpg/02/50/39/72/360_F_250397206_HuBj2V5oEytcqonzpzum4IjEjtAsZq3g.jpg");
+var singaporeImage = loadImage("https://images.goway.com/production/styles/wide/s3/featured_images/shutterstock_1116483092.jpg?VersionId=TdMumBsWTDvKGaT6bbv.b5XO4PZqWzwf&itok=qRqmrUHQ​s");
+
+var ghanaImage = 
+loadImage("https://abudhabi.mfa.gov.gh/uploads/SectionImages/9543_glance1.jpg");
+
+var argentinaImage =
+loadImage("https://lp-cms-production.imgix.net/2024-08/shutterstock1338447983.jpg?auto=format&q=72&w=1440&h=810&fit=crop");
+
+var chipotleImage =
+loadImage("https://mma.prnewswire.com/media/1947967/500th_Chipotlane_exterior_credit_Tim_Furlong_Jr.jpg?w=2700");
+
+
 
 //Variable Declarations
-var sceneImage = caveSceneImage;
-var sceneText = "Where do you want to go?  [Press f for forest and c for cave]";
+var placeImage = dubaiSceneImage;
+var sceneImage = singaporeImage;
+var sceneText = "Where do you want to go? [Press S for first destination]";
 
 draw = function(){
     
@@ -17,20 +29,46 @@ draw = function(){
 
 
    if(keyPressed){
-     if(key == 'f'){
-       sceneImage = forestImage;   
-       sceneText = "No fox here.  [Press s to restart]";
-     } 
+    if(key == 'd'){
+      placeImage = dubaiSceneImage;
+      sceneText = "Where do you want to go?  [Press S for first location]";
+     }
+  
      if(key == 's'){
-      sceneImage = caveSceneImage;
-      sceneText = "Where do you want to go?  [Press f for forest and c for cave]";
-    } 
+      placeImage = singaporeImage;   
+      sceneText = "Singapore! would you like to visit here? press G for next location";
+     } 
+    
+      
+     if(key == 'g'){
+     placeImage = ghanaImage;
+     sceneText = "Ghana! would you like to visit here? press A for next location"
+     }
+     
+     if(key == 'a'){
+     placeImage = argentinaImage;
+     sceneText = "Argentina!, would you like to visit here? Press c for next location"
+     }
+     
+     if(key == 'c'){
+     placeImage = chipotleImage;
+     sceneText = "your home sweet home!! press d to restart!"
+    
+     }
+     
+    }
+      
+     if(mousePressed){
+text("world", random(0,600), random (0,400)); 
+      
+     
    }
   
-};
+
+}
 
 var drawScene = function(){
-    image(sceneImage, 0, 0);
+    image(placeImage, 0, 0);
     
     fill(0,0,0);
     rect(0, 350, 600, 100);
