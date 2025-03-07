@@ -58,11 +58,14 @@ draw = function(){
      
     }
       
-      
+     if(mousePressed){
+text("world", random(0,600), random (0,400)); 
       
      
    }
   
+
+}
 
 var drawScene = function(){
     image(placeImage, 0, 0);
